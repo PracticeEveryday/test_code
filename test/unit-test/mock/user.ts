@@ -1,7 +1,9 @@
 import { faker } from "@faker-js/faker";
 import dayjs from "dayjs";
 import { v4 as uuidv4 } from "uuid";
-import { UserEntity } from "../../../src/db/entity/user.entity";
+
+import { IUserService } from "../../../src/types/interfaces/IUserService";
+
 export const dayString = dayjs().toISOString();
 export const mockObjectId = uuidv4();
 export const mockEmail = faker.internet.email();
@@ -23,7 +25,7 @@ export const updateUser = {
   update_dt: dayString,
 };
 
-export const TestUserModel = {
+export const TestUserModel: Partial<IUserService> = {
   create: async (email: string, name: string) => {
     return userObject;
   },

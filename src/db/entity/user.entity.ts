@@ -7,8 +7,10 @@ import {
   CreateDateColumn,
 } from "typeorm";
 
+import { IUser } from "../../types/interfaces/IUserService";
+
 @Entity("users")
-export class UserEntity extends BaseEntity {
+export class UserEntity extends BaseEntity implements IUser {
   // 유저 primary key
   @PrimaryColumn("uuid")
   uuid: string;

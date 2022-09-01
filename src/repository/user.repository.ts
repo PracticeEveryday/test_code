@@ -2,11 +2,11 @@ import { MyDataSource } from "../db/data-source";
 
 import { Repository } from "typeorm";
 import { UserEntity } from "../db/entity/user.entity";
-
+import { IUserRepositoryModel } from "../types/interfaces/IUserService";
 export interface UserRepository extends Repository<UserEntity> {}
 
-export class UserRepositoryModel {
-  private userRepository;
+export class UserRepositoryModel implements IUserRepositoryModel {
+  private userRepository: UserRepository;
   constructor() {
     this.userRepository = MyDataSource.getRepository("users");
   }
