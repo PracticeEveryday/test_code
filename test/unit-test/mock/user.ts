@@ -15,8 +15,20 @@ export const userObject = {
   update_dt: dayString,
 };
 
+export const updateUser = {
+  uuid: mockObjectId,
+  name: "kim",
+  email: "test@test.com",
+  create_dt: dayString,
+  update_dt: dayString,
+};
+
 export const TestUserModel = {
   create: async (email: string, name: string) => {
     return userObject;
+  },
+
+  update: async (uuid: string, updateInfo) => {
+    return updateUser;
   },
 };

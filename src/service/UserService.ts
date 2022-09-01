@@ -5,4 +5,9 @@ export class UserService {
     const newUser = this.userRepositoryModel.create(email, name);
     return newUser;
   };
+
+  public update = async (uuid: string, updateInfo) => {
+    const updatedUser = this.userRepositoryModel.update(uuid, updateInfo);
+    return updatedUser;
+  };
 }

@@ -14,4 +14,14 @@ export class UserRepositoryModel {
     const newUser = await this.userRepository.save({ email, name });
     return newUser;
   };
+
+  public update = async (uuid: string, updateInfo) => {
+    const updateUser = await this.userRepository
+      .createQueryBuilder()
+      .update()
+      .set(updateInfo)
+      .where("uuid = :uuid", { uuid })
+      .execute();
+    return updateUser;
+  };
 }
