@@ -26,15 +26,15 @@ export const updateUser = {
 };
 
 export const TestUserModel: Partial<IUserService> = {
-  create: async (email: string, name: string) => {
+  create: async (email, name) => {
     return userObject;
   },
 
-  update: async (uuid: string, updateInfo) => {
+  update: async (uuid, updateInfo) => {
     return updateUser;
   },
 
-  getUser: async (uuid: string) => {
+  getUser: async (uuid) => {
     return userObject;
   },
 
