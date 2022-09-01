@@ -12,9 +12,11 @@ export interface IUserService {
   userRepositoryModel: IUserRepositoryModel;
   create(email: string, name: string): Promise<IUser>;
   update(uuid: string, updateInfo: Partial<IUser>): Promise<IUser>;
+  getUser(uuid: string): Promise<IUser>;
 }
 
 export interface IUserRepositoryModel {
   create(email: string, name: string): Promise<IUser>;
   update(uuid: string, updateInfo: Partial<IUser>): Promise<UpdateResult>;
+  getUser(uuid: string): Promise<IUser | null>;
 }

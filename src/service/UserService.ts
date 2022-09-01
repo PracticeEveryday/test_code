@@ -15,4 +15,9 @@ export class UserService implements IUserService {
     const updatedUser = this.userRepositoryModel.update(uuid, updateInfo);
     return updatedUser;
   };
+
+  public getUser = async (uuid) => {
+    const foundUser = this.userRepositoryModel.getUser(uuid);
+    return foundUser;
+  };
 }

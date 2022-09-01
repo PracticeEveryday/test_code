@@ -33,4 +33,8 @@ export const TestUserModel: Partial<IUserService> = {
   update: async (uuid: string, updateInfo) => {
     return updateUser;
   },
+
+  getUser: async (uuid: string) => {
+    return userObject;
+  },
 };

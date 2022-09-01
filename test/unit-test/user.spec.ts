@@ -20,4 +20,8 @@ describe("User Service Test", () => {
       updateUser
     );
   });
+
+  test("should return UserInfo", async () => {
+    expect(await userService.getUser(mockObjectId)).toEqual(userObject);
+  });
 });
