@@ -1,7 +1,17 @@
-#### yarn add -D jest typescript
+# Jest를 이용한 Unit-Test 코드입니다.
+## User CRUD API
+```js
+  git clone https://github.com/PracticeEveryday/unit-test.git
+  cd unit-test
+  yarn install
+  yarn test
+```
 
-#### yarn add -D ts-jest @types/jest
+## 환경 설정 과정
 
-#### npx ts-jest config:init
-
-#### yarn add --dev @babel/preset-typescript
+```
+1. yarn add -D jest typescript
+2. yarn add -D ts-jest @types/jest
+3. npx ts-jest config:init
+4. yarn add --dev @babel/preset-typescript
+```
