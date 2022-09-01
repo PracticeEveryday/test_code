@@ -32,4 +32,9 @@ export class UserRepositoryModel implements IUserRepositoryModel {
       .getOne();
     return foundUser;
   };
+
+  public getAll = async () => {
+    const foundUsers = this.userRepository.find();
+    return foundUsers;
+  };
 }

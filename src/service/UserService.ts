@@ -20,4 +20,9 @@ export class UserService implements IUserService {
     const foundUser = this.userRepositoryModel.getUser(uuid);
     return foundUser;
   };
+
+  public getAll = async () => {
+    const foundUsers = this.userRepositoryModel.getAll();
+    return foundUsers;
+  };
 }

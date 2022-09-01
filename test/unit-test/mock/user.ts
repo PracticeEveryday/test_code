@@ -37,4 +37,8 @@ export const TestUserModel: Partial<IUserService> = {
   getUser: async (uuid: string) => {
     return userObject;
   },
+
+  getAll: async () => {
+    return [userObject];
+  },
 };

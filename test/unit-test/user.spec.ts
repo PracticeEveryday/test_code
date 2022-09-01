@@ -24,4 +24,8 @@ describe("User Service Test", () => {
   test("should return UserInfo", async () => {
     expect(await userService.getUser(mockObjectId)).toEqual(userObject);
   });
+
+  test("should return all", async () => {
+    expect(await userService.getAll()).toEqual([userObject]);
+  });
 });
