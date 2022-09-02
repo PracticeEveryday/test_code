@@ -1,17 +1,25 @@
 import express, { Request, Response } from "express";
-const app = express();
 
-// Parse JSON
-app.use(express.json());
+export class App {
+  private app: express.Application;
 
-app.get("/", (req: Request, res: Response) => {
-  res.json({
-    message: "Hello, this is Node.js, Express.js and TypeScript.",
-  });
-});
+  constructor() {
+    this.app = express();
+  }
 
-const port = process.env.PORT || 3000;
+  private setMiddlewares() {
+    this.app.use(express.json());
+    this.setRouters();
+  }
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+  private setRouters() {
+    this.app.get("/", (req, res) => {
+      res.status(200).json({ status: "succ" });
+    });
+  }
+
+  public init() {
+    this.setMiddlewares();
+    this.app.listen(3000, () => console.log("3000번 포트 온"));
+  }
+}
