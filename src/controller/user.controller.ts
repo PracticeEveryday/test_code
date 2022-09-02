@@ -1,10 +1,4 @@
-import express, {
-  Router,
-  Request,
-  Response,
-  NextFunction,
-  Application,
-} from "express";
+import { Router, Request, Response, NextFunction } from "express";
 
 export class UserController {
   private userRouter: Router;
@@ -16,9 +10,13 @@ export class UserController {
   }
 
   public create = async (req: Request, res: Response, next: NextFunction) => {
-    const { email, name } = req.body;
-    const newUser = await this.userService.create(email, name);
-    res.status(200).json(newUser);
+    try {
+      const { email, name } = req.body;
+      const newUser = await this.userService.create(email, name);
+      res.status(200).json(newUser);
+    } catch (error) {
+      next(error);
+    }
   };
 
   public routes = () => {
