@@ -19,6 +19,6 @@
 ```
 
 ```
-yarn add express nodemon typescript @types/express @types/node ts-node  -D
+yarn add express nodemon typescript @types/express @types/node ts-node pg  -D
 yarn add jest ts-jest @types/jest
 ```
