@@ -1,6 +1,6 @@
 import {
   Entity,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
   Column,
   BaseEntity,
   UpdateDateColumn,
@@ -12,7 +12,7 @@ import { IUser } from "../../types/interfaces/IUserService";
 @Entity("users")
 export class UserEntity extends BaseEntity implements IUser {
   // 유저 primary key
-  @PrimaryColumn("uuid")
+  @PrimaryGeneratedColumn("uuid")
   uuid: string;
 
   // user email id
