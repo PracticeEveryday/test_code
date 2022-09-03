@@ -9,7 +9,7 @@ import {
 
 import { IUser } from "../../types/interfaces/IUserService";
 
-@Entity("users")
+@Entity("user")
 export class UserEntity extends BaseEntity implements IUser {
   // 유저 primary key
   @PrimaryGeneratedColumn("uuid")
