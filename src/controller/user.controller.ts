@@ -9,7 +9,7 @@ export class UserController {
     this.routes();
   }
 
-  public create = async (req: Request, res: Response, next: NextFunction) => {
+  private create = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const { email, name } = req.body;
       const newUser = await this.userService.create(email, name);
@@ -19,7 +19,7 @@ export class UserController {
     }
   };
 
-  public routes = () => {
+  private routes = () => {
     this.userRouter.post("/user", this.create);
   };
 }
