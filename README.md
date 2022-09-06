@@ -20,5 +20,5 @@
 
 ```
 yarn add express nodemon typescript @types/express @types/node ts-node pg  -D
-yarn add jest ts-jest @types/jest
+yarn add jest ts-jest @types/jest @babel/preset-typescript
 ```
